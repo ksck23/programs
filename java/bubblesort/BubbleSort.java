@@ -6,20 +6,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 class BubbleSort {
-
     public int[] readInput (String fileName) {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-                String[] itemsString = br.readLine().split(" ");
 
-                int[] items = new int[itemsString.length];
+            String[] itemsString = br.readLine().split(" ");
+            int[] items          = new int[itemsString.length];
 
-                for (int n = 0; n < items.length; n++) {
-                    items[n] = Integer.parseInt(itemsString[n]);
-                }
+            for (int n = 0; n < items.length; n++) {
+                items[n] = Integer.parseInt(itemsString[n]);
+            }
+            return items;
 
-                return items;
-
-            } catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
@@ -28,22 +26,16 @@ class BubbleSort {
     public void writeOutput (String fileName, int[] items) {
         try {
             File file = new File(fileName);
- 
-            if (!file.exists()) {
-                file.createNewFile();
-            }
- 
+            if (!file.exists()) file.createNewFile();
             FileWriter fw     = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
 
             for (int i=0; i<items.length; i++) {
                 bw.write(items[i] + "\n");
             }
+
             bw.close();
- 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (IOException e) e.printStackTrace();
     }
 
     public void swap (int i, int j, int[] items) {
@@ -64,9 +56,7 @@ class BubbleSort {
     }
 
     public static void main (String[] args) {
-
         BubbleSort myObj = new BubbleSort();
-
         if (args.length == 1) {
             int[] itemsList = myObj.readInput(args[0]);
             itemsList       = myObj.bubbleSort(itemsList);
