@@ -8,13 +8,12 @@ import java.io.IOException;
 class BubbleSort {
 
     public int[] readInput (String fileName) {
-        try (BufferedReader br   = new BufferedReader(new FileReader(fileName))) {
-                int totalItems       = Integer.parseInt(br.readLine());
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
                 String[] itemsString = br.readLine().split(" ");
 
                 int[] items = new int[itemsString.length];
 
-                for(int n = 0; n < items.length; n++) {
+                for (int n = 0; n < items.length; n++) {
                     items[n] = Integer.parseInt(itemsString[n]);
                 }
 
@@ -26,7 +25,7 @@ class BubbleSort {
         }
     }
 
-    public void writeOutput(String fileName, int[] items) {
+    public void writeOutput (String fileName, int[] items) {
         try {
             File file = new File(fileName);
  
@@ -34,7 +33,7 @@ class BubbleSort {
                 file.createNewFile();
             }
  
-            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            FileWriter fw     = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
 
             for (int i=0; i<items.length; i++) {
@@ -64,7 +63,7 @@ class BubbleSort {
         return items;
     }
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
 
         BubbleSort myObj = new BubbleSort();
 
