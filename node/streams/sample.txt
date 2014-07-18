@@ -1,0 +1,15 @@
+hi
+hello
+this
+is
+some
+random
+text
+trying
+to
+stream
+the
+data
+to
+another
+file
