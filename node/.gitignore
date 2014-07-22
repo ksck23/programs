@@ -1,1 +1,3 @@
-streams/*.out
+streams/*.log
+prototypes/*.log
+*.log
