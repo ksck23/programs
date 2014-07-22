@@ -24,8 +24,15 @@ Person.prototype = {
     setName: function (name) {
         this.name = name;
     },
+    setAge: function (age) {
+        this.age = age;
+    },
+    setDesignation: function (designation) {
+        this.designation = designation;
+    }
 };
 
+// instantiating a new object to the class
 var shiva = new Person({
     name : "Shiva K",
     age  : "24",
@@ -37,6 +44,10 @@ console.log("Name        : ", shiva.getName());
 console.log("Age         : ", shiva.getAge());
 console.log("Designation : ", shiva.getDesignation());
 
-console.log("\nupdating name with full name");
+console.log("\nupdating name...");
 shiva.setName("Shiva Chandra Kumar K");
-console.log("updated name : ", shiva.getName());
+console.log("updated name to :", shiva.getName());
+
+console.log("\nupdating designation...");
+shiva.setDesignation("Senior Software Engineer");
+console.log("updated designation to :", shiva.getDesignation());
