@@ -2,8 +2,8 @@
  * Node.js : Streams API : Example 1
  */
 var fs = require('fs');
-var rstream = fs.createReadStream('sample.txt');
-var wstream = fs.createWriteStream('duplicate.txt');
+var rstream = fs.createReadStream('./data/sample.txt');
+var wstream = fs.createWriteStream('./data/duplicate.txt');
 
 var dataLength = 0;
 // listen on a readStream and find the data length
