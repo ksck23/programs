@@ -52,14 +52,14 @@ BST.prototype.insert = function (data) {
 BST.prototype.inorder = function (pointer) {
     if (pointer) {
         this.inorder(pointer.left);
-        console.log(pointer.data);
+        console.log(pointer.show());
         this.inorder(pointer.right);
     }
 };
 
 BST.prototype.preorder = function (pointer) {
     if (pointer) {
-        console.log(pointer.data);
+        console.log(pointer.show());
         this.inorder(pointer.left);
         this.inorder(pointer.right);
     }
@@ -69,7 +69,7 @@ BST.prototype.postorder = function (pointer) {
     if (pointer) {
         this.inorder(pointer.left);
         this.inorder(pointer.right);
-        console.log(pointer.data);
+        console.log(pointer.show());
     }
 };
 
@@ -90,7 +90,7 @@ bst.insert(29);
 bst.insert(18);
 bst.insert(87);
 
-console.log("============ INORDER ==============");
+console.log("\n============ INORDER ==============");
 bst.inorder(bst.root);
 console.log("============ PREORDER ==============");
 bst.preorder(bst.root);
