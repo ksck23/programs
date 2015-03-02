@@ -49,7 +49,7 @@ LList.prototype.remove = function (value) {
 
 LList.prototype.display = function () {
     console.log('=======================================');
-    console.log('            LINKED LIST                ')
+    console.log('            LINKED LIST                ');
     console.log('=======================================');
     var currentNode = this.head;
     while (currentNode.next) {
