@@ -20,6 +20,10 @@ Dictionary.prototype.remove = function (key) {
     delete this.datastore[key];
 };
 
+Dictionary.prototype.count = function () {
+    return Object.keys(this.datastore).length;
+};
+
 Dictionary.prototype.display = function () {
     console.log('=======================================');
     console.log('            DICTIONARY                 ');
@@ -28,6 +32,7 @@ Dictionary.prototype.display = function () {
     Object.keys(this.datastore).map(function (key) {
         console.log(key + " -> " + self.datastore[key]);
     });
+    console.log('Total entries = ', dict.count());
 };
 
 var dict = new Dictionary();
