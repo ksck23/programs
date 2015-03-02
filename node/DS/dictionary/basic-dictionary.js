@@ -29,10 +29,10 @@ Dictionary.prototype.display = function () {
     console.log('            DICTIONARY                 ');
     console.log('=======================================');
     self = this;
-    Object.keys(this.datastore).map(function (key) {
+    Object.keys(self.datastore).map(function (key) {
         console.log(key + " -> " + self.datastore[key]);
     });
-    console.log('Total entries = ', dict.count());
+    console.log('Total entries = ', self.count());
 };
 
 var dict = new Dictionary();
